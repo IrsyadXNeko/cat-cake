@@ -7,6 +7,15 @@ export default defineNuxtConfig({
     cssPath: '~/assets/css/tailwind.css',
     configPath: 'tailwind.config.ts',
   },
+  runtimeConfig: {
+    supabaseServiceKey: '',
+    public: {
+      whatsappNumber: '6282312479588',
+      adminUsername: 'admin',
+      adminPassword: 'catcake2024',
+      supabaseUrl: '',
+    },
+  },
   app: {
     head: {
       title: 'Cat Cake — Fluffy Treats to Brighten Your Day',
@@ -39,11 +48,6 @@ export default defineNuxtConfig({
           href: 'https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap',
         },
       ],
-    },
-  },
-  nitro: {
-    experimental: {
-      database: true,
     },
   },
 })

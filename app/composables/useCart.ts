@@ -55,7 +55,8 @@ export function useCart() {
     isOpen.value = true
   }
 
-  const WHATSAPP_NUMBER = '6282312479588'
+  const config = useRuntimeConfig()
+  const WHATSAPP_NUMBER = config.public.whatsappNumber
 
   const whatsappUrl = computed(() => {
     if (cart.value.length === 0) return '#'

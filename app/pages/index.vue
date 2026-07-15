@@ -25,7 +25,8 @@ const filteredMenus = computed<Menu[]>(() => {
 const allCategories: ('All' | MenuCategory)[] = ['All', ...MENU_CATEGORIES]
 
 // WhatsApp order link
-const WHATSAPP_NUMBER = '6281234567890'
+const config = useRuntimeConfig()
+const WHATSAPP_NUMBER = config.public.whatsappNumber
 const whatsappUrl = computed(() =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Halo Cat Cake! Saya mau order 🐾')}`
 )

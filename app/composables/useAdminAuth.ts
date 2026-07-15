@@ -1,15 +1,14 @@
 import type { AdminSession, AdminCredentials } from '~/types'
 
-// Simple simulated auth — in production use proper JWT/session
-const ADMIN_USERNAME = 'admin'
-const ADMIN_PASSWORD = 'catcake2024'
-
 const session = reactive<AdminSession>({
   isAuthenticated: false,
   username: null,
 })
 
 export function useAdminAuth() {
+  const config = useRuntimeConfig()
+  const ADMIN_USERNAME = config.public.adminUsername
+  const ADMIN_PASSWORD = config.public.adminPassword
   function login(credentials: AdminCredentials): boolean {
     if (
       credentials.username === ADMIN_USERNAME &&
